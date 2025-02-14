@@ -31,7 +31,9 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
 const nombre = ref('');
 const segundoNombre = ref('');
 const primerApellido = ref('');
@@ -77,6 +79,7 @@ const validarSegundoApellido = () => {
   } else {
     error.value = false;
     alert('Registro completado con éxito!');
+    router.push('/puzzle'); // 🔥 Redirección automática
   }
 };
 </script>
